@@ -41,7 +41,7 @@ void renderAll(void)
 	glPointSize(1.0f);
 	glBegin(GL_POINTS);
 	{
-		drawLine(50, 30, 50, 480);
+		drawLine(0,0, 640, 480);
 	}
 	glEnd();
 }
