@@ -41,7 +41,11 @@ void renderAll(void)
 	glPointSize(1.0f);
 	glBegin(GL_POINTS);
 	{
+<<<<<<< HEAD
 		drawLine(0, 0,500, 500);
+=======
+		drawLine(0,0, 640, 480);
+>>>>>>> 912658abaeb29e77e1dfd3d1cac47a297f70002e
 	}
 	glEnd();
 }
