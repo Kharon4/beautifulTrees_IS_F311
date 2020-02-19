@@ -41,7 +41,7 @@ void renderAll(void)
 	glPointSize(1.0f);
 	glBegin(GL_POINTS);
 	{
-		drawLine(50, 30, 50, 480);
+		drawLine(0, 0,500, 500);
 	}
 	glEnd();
 }
@@ -55,7 +55,7 @@ int main(void)
 		return -1;
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, "Test Window", NULL, NULL);
+	window = glfwCreateWindow(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, "Test Window 2", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();
