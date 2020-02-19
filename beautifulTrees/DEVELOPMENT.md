@@ -13,4 +13,4 @@
 
 ### Screenshot ( as of 0d0603cf7)
 
-![linux](screenshots/linux_window.png)
+![linux](./screenshots/linux_window.png)

@@ -1,3 +1,7 @@
+/**
+ * @file beautifulTrees.h header file for the main beautiful trees program.
+ */
+
 #pragma once
 
 #define VIEWPORT_WIDTH 640

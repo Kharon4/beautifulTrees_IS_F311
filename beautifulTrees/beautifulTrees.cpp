@@ -1,4 +1,3 @@
-
 #include "pch.h"
 #include "beautifulTrees.h"
 #include <GLFW/glfw3.h>
