@@ -2,6 +2,4 @@
 Debug/
 beautifulTrees/Debug
 beautifulTrees.sln
-beautifulTrees/beautifulTrees.vcxproj
-beautifulTrees/beautifulTrees.user
-beautifulTrees/beautifulTrees.filters
+beautifulTrees/beautifulTrees.vcxproj.user
