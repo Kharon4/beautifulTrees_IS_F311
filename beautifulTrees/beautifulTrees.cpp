@@ -1,8 +1,8 @@
 #include "pch.h"
-#include "drawLine.h"
-#include "beautifulTrees.h"
-#include "utils.h"
 #include <GLFW/glfw3.h>
+#include "beautifulTrees.h"
+#include "gfx/primitives.h"
+#include "conf.h"
 
 /**
  * Point of entry for execution
@@ -16,7 +16,7 @@ int main(void)
 		return -1;
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, "Test Window 2", NULL, NULL);
+	window = glfwCreateWindow(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, "Test Window", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();

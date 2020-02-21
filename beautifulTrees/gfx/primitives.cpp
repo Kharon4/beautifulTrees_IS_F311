@@ -1,7 +1,15 @@
-#include "pch.h"
+#include "../pch.h"
+#include <../include/GLFW/glfw3.h>
+#include "primitives.h"
 #include "utils.h"
-#include "drawLine.h"
-#include <GLFW/glfw3.h>
+
+void drawPoint(int x, int y)
+{
+	float destX = convertXToNDL(x);
+	float destY = convertYToNDL(y);
+
+	glVertex2f(destX, destY);
+}
 
 void drawLine(int x1, int y1, int x2, int y2)
 {
@@ -55,5 +63,8 @@ void drawLine(int x1, int y1, int x2, int y2)
 			y += yi;
 		}
 	} while (x < x2);
+}
 
+void drawCircle(int radius, int center_x, int center_y)
+{
 }
