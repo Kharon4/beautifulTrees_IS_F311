@@ -3,24 +3,6 @@
 #include "drawLine.h"
 #include <GLFW/glfw3.h>
 
-void drawPoint(int x, int y)
-{
-	float destX = convertXToNDL(x);
-	float destY = convertYToNDL(y);
-
-	glVertex2d(destX, destY);
-}
-
-float convertXToNDL(int x)
-{
-	return (float)2.0 * x / VIEWPORT_WIDTH - 1;
-}
-
-float convertYToNDL(int y)
-{
-	return (float)2.0 * y / VIEWPORT_HEIGHT - 1;
-}
-
 void drawLine(int x1, int y1, int x2, int y2)
 {
 	bool invertPoint = false;
