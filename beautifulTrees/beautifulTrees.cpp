@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	GLFWwindow *window;
+	GLFWwindow* window;
 
 	/* Initialize the library */
 	if (!glfwInit())
@@ -50,7 +50,8 @@ void renderAll(void)
 	glPointSize(1.0f);
 	glBegin(GL_POINTS);
 	{
-		drawLine(0, 0, 500, 500);
+		drawLine(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT / 2);
+		drawLine(0, 0, VIEWPORT_WIDTH / 2, VIEWPORT_HEIGHT);
 	}
 	glEnd();
 }
