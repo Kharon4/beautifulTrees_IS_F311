@@ -14,7 +14,8 @@ void drawPoint(int x, int y)
 void drawLine(int x1, int y1, int x2, int y2)
 {
 	bool invertPoint = false;
-	if ((y2 - y1) > (x2 - x1)) {
+	if ((y2 - y1) > (x2 - x1))
+	{
 		/* If the slope is greater than 1, we swap the x and y coordinates
 		* to bring the slope between between 0 and 1. The algorithm then proceeds
 		* as normal. However, during the final render, we need to swap the final
@@ -65,6 +66,49 @@ void drawLine(int x1, int y1, int x2, int y2)
 	} while (x < x2);
 }
 
+// Begin circle code.
+int c_x;
+int c_y;
+
+void plotCircle(int x, int y)
+{
+	drawPoint(c_x - x, c_y - y);
+	drawPoint(c_x - x, c_y + y);
+	drawPoint(c_x + x, c_y - y);
+	drawPoint(c_x + x, c_y + y);
+	drawPoint(c_x + y, c_y + x);
+	drawPoint(c_x - y, c_y + x);
+	drawPoint(c_x + y, c_y - x);
+	drawPoint(c_x - y, c_y - x);
+}
+
 void drawCircle(int radius, int center_x, int center_y)
 {
+	c_x = center_x;
+	c_y = center_y;
+	int x = 0;
+	int y = radius;
+	int d = 1 - radius;
+	int deltaE = 3;
+	int deltaSE = -2 * radius + 5;
+	plotCircle(x, y);
+	while (y > x)
+	{
+		if (d < 0)
+		{
+			d += deltaE;
+			deltaE += 2;
+			deltaSE += 2;
+		}
+		else
+		{
+			d += deltaSE;
+			deltaE += 2;
+			deltaSE += 4;
+			y--;
+		}
+		x++;
+		plotCircle(x, y);
+	}
 }
+// End circle code.
