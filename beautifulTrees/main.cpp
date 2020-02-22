@@ -25,9 +25,17 @@ struct Line
   int y2;
 };
 
+struct Circle
+{
+  int c_x;
+  int c_y;
+  int radius;
+};
+
 int exerciseChoice = -1;
 
 struct Line line;
+struct Circle circle;
 
 int main(int argc, char const *argv[])
 {
@@ -81,6 +89,13 @@ void exerciseLine()
 
 void exerciseCircle()
 {
+  exerciseChoice = 2;
+  printf("x coordinate of center of circle>");
+  scanf("%d", &circle.c_x);
+  printf("y coordinate of center of circle>");
+  scanf("%d", &circle.c_y);
+  printf("radius of circle>");
+  scanf("%d", &circle.radius);
 }
 
 void exerciseBinTree()
@@ -95,8 +110,11 @@ void renderAll()
     switch (exerciseChoice)
     {
     case 1:
-      printf("Drawing line %d %d %d %d\n", line.x1, line.y1, line.x2, line.y2);
       drawLine(line.x1, line.y1, line.x2, line.y2);
+      break;
+
+    case 2:
+      drawCircle(circle.radius, circle.c_x, circle.c_y);
       break;
 
     default:
@@ -116,7 +134,7 @@ void startRenders()
     return;
 
   /* Create a windowed mode window and its OpenGL context */
-  window = glfwCreateWindow(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, "Test Window", NULL, NULL);
+  window = glfwCreateWindow(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, "Computer Graphics Assignment I", NULL, NULL);
   if (!window)
   {
     glfwTerminate();
