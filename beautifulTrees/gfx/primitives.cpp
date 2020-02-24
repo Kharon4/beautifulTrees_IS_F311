@@ -2,6 +2,7 @@
 #include <../include/GLFW/glfw3.h>
 #include "primitives.h"
 #include "utils.h"
+#include <math.h>
 
 void drawPoint(int x, int y)
 {
@@ -14,9 +15,8 @@ void drawPoint(int x, int y)
 void drawLine(int x1, int y1, int x2, int y2)
 {
 	
-
 	bool invertPoint = false;
-	if ((y2 - y1) > (x2 - x1))
+	if ((abs(y2 - y1) > abs(x2 - x1)))
 	{
 		/* If the slope is greater than 1, we swap the x and y coordinates
 		* to bring the slope between between 0 and 1. The algorithm then proceeds
@@ -32,6 +32,18 @@ void drawLine(int x1, int y1, int x2, int y2)
 		y2 = temp;
 
 		invertPoint = true;
+	}
+
+	if (x1 > x2)
+	{
+		/* Swap the points around */
+		int temp = x1;
+		x1 = x2;
+		x2 = temp;
+
+		temp = y1;
+		y1 = y2;
+		y2 = temp;
 	}
 
 	int dx = x2 - x1;
