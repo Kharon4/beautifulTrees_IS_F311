@@ -105,13 +105,19 @@ void exerciseCircle()
 binTree<char> head('H');
 binTree<char> c1('a');
 binTree<char> c2('b');
-
+binTree<char> c[10];
 void exerciseBinTree()
 {
+    exerciseChoice = 3;
     head.set(&c1, &c2);
+    c1.set(c, c + 1);
+    c[0].set(c + 2, c + 3);
+    c[1].set(c + 4, c + 5);
+    c[2].set(c + 6, c + 7);
+
     treeDisplay::extreme<char> e1, e2;
     treeDisplay::setup<char>(&head, 0, e1, e2);
-    treeDisplay::petrify<char>(&head);
+    treeDisplay::petrify<char>(&head);   
 }
 
 void renderAll()

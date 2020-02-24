@@ -12,7 +12,7 @@ public:
 	binTree* right = nullptr;
 	long int xCoord, yCoord, offset;
 	bool thread;
-	inline void set(binTree* L, binTree* R) { left = L; right = R;}
+	inline void set(binTree* L, binTree* R) { left = L; right = R; }
 	binTree();
 	binTree(T val);
 	void getList(std::vector<binTree*>& list);

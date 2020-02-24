@@ -1,5 +1,5 @@
 #pragma once
-#include "binTree.h"
+#include "binTree.cpp"
 #include "primitives.h"
 #include "../conf.h"
 
@@ -7,7 +7,7 @@
 
 namespace treeDisplay {
 
-#define minSep 30
+#define minSep 50
 #define rad 10
 
 	template <typename T>
@@ -143,18 +143,18 @@ namespace treeDisplay {
 	}
 
 	int convert(int in) {
-		return VIEWPORT_HEIGHT - 15 * in;
+		return VIEWPORT_HEIGHT - 30 * in-20;
 	}
 
 	template<typename T>
 	void drawTree(binTree<T>* t) {
 		drawCircle(rad,t->xCoord, convert(t->yCoord));
 		if (t->left != nullptr) {
-			drawLine(t->xCoord, convert(t->yCoord), t->left->xCoord, convert(t->left->yCoord));
+			drawLine(t->left->xCoord, convert(t->left->yCoord), t->xCoord, convert(t->yCoord));
 			drawTree(t->left);
 		}
 		if (t->right != nullptr){
-			drawLine(t->xCoord, convert(t->yCoord), t->right->xCoord, convert(t->right->yCoord));
+			drawLine(t->right->xCoord, convert(t->right->yCoord),t->xCoord, convert(t->yCoord));
 			drawTree(t->right);
 		}
 	}
