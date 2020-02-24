@@ -4,8 +4,10 @@
  * @compilation g++ gfx/*.cpp pch.cpp main.cpp -lglfw -lGLU -lGL
  */
 
+#include"pch.h"
 #include "iostream"
 #include "gfx/primitives.h"
+#include "gfx/treeDrawer.h"
 #include "pch.h"
 #include <GLFW/glfw3.h>
 #include "conf.h"
@@ -78,28 +80,38 @@ void exerciseLine()
 {
   exerciseChoice = 1;
   printf("x coordinate of starting point>");
-  scanf("%d", &line.x1);
+  scanf_s("%d", &line.x1);
   printf("y coordinate of starting point>");
-  scanf("%d", &line.y1);
+  scanf_s("%d", &line.y1);
   printf("x coordinate of ending point>");
-  scanf("%d", &line.x2);
+  scanf_s("%d", &line.x2);
   printf("y coordinate of ending point>");
-  scanf("%d", &line.y2);
+  scanf_s("%d", &line.y2);
 }
 
 void exerciseCircle()
 {
   exerciseChoice = 2;
   printf("x coordinate of center of circle>");
-  scanf("%d", &circle.c_x);
+  scanf_s("%d", &circle.c_x);
   printf("y coordinate of center of circle>");
-  scanf("%d", &circle.c_y);
+  scanf_s("%d", &circle.c_y);
   printf("radius of circle>");
-  scanf("%d", &circle.radius);
+  scanf_s("%d", &circle.radius);
 }
-
+binTree<char> head('H');
+binTree<char> c1('a');
+binTree<char> c2('b');
 void exerciseBinTree()
 {
+    
+    
+    
+    head.set(&c1, &c2);
+    treeDisplay::extreme<char> e1, e2;
+    treeDisplay::setup<char>(&head, 0, e1, e2);
+    treeDisplay::petrify<char>(&head);
+    
 }
 
 void renderAll()
@@ -119,6 +131,7 @@ void renderAll()
 
     default:
       cout << "Error in renderAll() - no valid exercise found\n";
+      treeDisplay::drawTree<char>(&head);
       break;
     }
   }
