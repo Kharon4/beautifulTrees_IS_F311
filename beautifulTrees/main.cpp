@@ -9,10 +9,9 @@
 #include "pch.h"
 #include "gfx/primitives.h"
 #include "gfx/treeDrawer.h"
-#include "gfx/binTree.cpp"
 #include <GLFW/glfw3.h>
 #include "conf.h"
-#define scanf_s scanf
+
 using namespace std;
 
 void exerciseLine();
