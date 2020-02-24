@@ -104,14 +104,10 @@ binTree<char> c1('a');
 binTree<char> c2('b');
 void exerciseBinTree()
 {
-    
-    
-    
     head.set(&c1, &c2);
     treeDisplay::extreme<char> e1, e2;
     treeDisplay::setup<char>(&head, 0, e1, e2);
-    treeDisplay::petrify<char>(&head);
-    
+    treeDisplay::petrify<char>(&head);   
 }
 
 void renderAll()
