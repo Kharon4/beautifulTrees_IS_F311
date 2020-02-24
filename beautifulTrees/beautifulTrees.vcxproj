@@ -167,7 +167,6 @@
     <ClInclude Include="gfx\binTree.h" />
     <ClInclude Include="conf.h" />
     <ClInclude Include="gfx\primitives.h" />
-    <ClInclude Include="gfx\temp.h" />
     <ClInclude Include="gfx\treeDrawer.h" />
     <ClInclude Include="gfx\utils.h" />
     <ClInclude Include="pch.h" />

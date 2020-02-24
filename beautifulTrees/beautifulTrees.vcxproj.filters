@@ -36,9 +36,6 @@
     <ClInclude Include="gfx\treeDrawer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="gfx\temp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

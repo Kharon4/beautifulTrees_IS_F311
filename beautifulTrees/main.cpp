@@ -7,7 +7,6 @@
 #include "pch.h"
 #include "iostream"
 #include "gfx/primitives.h"
-#include "gfx/binTree.cpp"
 #include "gfx/treeDrawer.h"
 #include "pch.h"
 #include <GLFW/glfw3.h>
@@ -82,32 +81,38 @@ void exerciseLine()
 {
   exerciseChoice = 1;
   printf("x coordinate of starting point>");
-  scanf_s("%d", &line.x1);
+  cin >> line.x1;
   printf("y coordinate of starting point>");
-  scanf_s("%d", &line.y1);
+  cin >> line.y1;
   printf("x coordinate of ending point>");
-  scanf_s("%d", &line.x2);
+  cin >> line.x2;
   printf("y coordinate of ending point>");
-  scanf_s("%d", &line.y2);
+  cin >> line.y2;
 }
 
 void exerciseCircle()
 {
   exerciseChoice = 2;
   printf("x coordinate of center of circle>");
-  scanf_s("%d", &circle.c_x);
+  cin >> circle.c_x;
   printf("y coordinate of center of circle>");
-  scanf_s("%d", &circle.c_y);
+  cin >> circle.c_y;
   printf("radius of circle>");
-  scanf_s("%d", &circle.radius);
+  cin >> circle.radius;
 }
 binTree<char> head('H');
 binTree<char> c1('a');
 binTree<char> c2('b');
+binTree<char> c[10];
 void exerciseBinTree()
 {
     exerciseChoice = 3;
     head.set(&c1, &c2);
+    c1.set(c, c + 1);
+    c[0].set(c + 2, c + 3);
+    c[1].set(c + 4, c + 5);
+    c[2].set(c + 6, c + 7);
+
     treeDisplay::extreme<char> e1, e2;
     treeDisplay::setup<char>(&head, 0, e1, e2);
     treeDisplay::petrify<char>(&head);   

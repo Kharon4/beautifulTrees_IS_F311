@@ -143,7 +143,7 @@ namespace treeDisplay {
 	}
 
 	int convert(int in) {
-		return VIEWPORT_HEIGHT - 30 * in-10;
+		return VIEWPORT_HEIGHT - 30 * in-20;
 	}
 
 	template<typename T>
