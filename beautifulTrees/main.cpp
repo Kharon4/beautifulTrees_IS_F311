@@ -4,13 +4,15 @@
  * @compilation g++ gfx/*.cpp pch.cpp main.cpp -lglfw -lGLU -lGL
  */
 
-#include"pch.h"
+#include "pch.h"
 #include "iostream"
 #include "gfx/primitives.h"
+#include "gfx/binTree.cpp"
 #include "gfx/treeDrawer.h"
 #include "pch.h"
 #include <GLFW/glfw3.h>
 #include "conf.h"
+#define scanf_s scanf
 using namespace std;
 
 void exerciseLine();
@@ -104,10 +106,12 @@ binTree<char> c1('a');
 binTree<char> c2('b');
 void exerciseBinTree()
 {
+    exerciseChoice = 3;
     head.set(&c1, &c2);
     treeDisplay::extreme<char> e1, e2;
     treeDisplay::setup<char>(&head, 0, e1, e2);
     treeDisplay::petrify<char>(&head);   
+
 }
 
 void renderAll()
@@ -125,9 +129,12 @@ void renderAll()
       drawCircle(circle.radius, circle.c_x, circle.c_y);
       break;
 
+    case 3:
+      treeDisplay::drawTree<char>(&head);
+      break;
+
     default:
       cout << "Error in renderAll() - no valid exercise found\n";
-      treeDisplay::drawTree<char>(&head);
       break;
     }
   }
