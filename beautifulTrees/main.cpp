@@ -4,13 +4,14 @@
  * @compilation g++ gfx/*.cpp pch.cpp main.cpp -lglfw -lGLU -lGL
  */
 
-#include"pch.h"
+#include "pch.h"
 #include "iostream"
 #include "pch.h"
 #include "gfx/primitives.h"
 #include "gfx/treeDrawer.h"
 #include <GLFW/glfw3.h>
 #include "conf.h"
+#include "chrono"
 
 using namespace std;
 
@@ -107,32 +108,40 @@ binTree<char> c2('b');
 binTree<char> c[10];
 void exerciseBinTree()
 {
-    exerciseChoice = 3;
-    head.set(&c1, &c2);
-    c1.set(c, c + 1);
-    c[0].set(c + 2, c + 3);
-    c[1].set(c + 4, c + 5);
-    c[2].set(c + 6, c + 7);
+  exerciseChoice = 3;
+  head.set(&c1, &c2);
+  c1.set(c, c + 1);
+  c[0].set(c + 2, c + 3);
+  c[1].set(c + 4, c + 5);
+  c[2].set(c + 6, c + 7);
 
-    treeDisplay::extreme<char> e1, e2;
-    treeDisplay::setup<char>(&head, 0, e1, e2);
-    treeDisplay::petrify<char>(&head);   
+  treeDisplay::extreme<char> e1, e2;
+  treeDisplay::setup<char>(&head, 0, e1, e2);
+  treeDisplay::petrify<char>(&head);
 }
 
 void renderAll()
 {
   glPointSize(1.0f);
-  glBegin(GL_POINTS);
+  glColor3f(1.0, 0.5, 1.0);
+  // glBegin(GL_POINTS);
+
   {
     switch (exerciseChoice)
     {
     case 1:
+      glBegin(GL_POINTS);
       drawLine(line.x1, line.y1, line.x2, line.y2);
+      glEnd();
       break;
 
     case 2:
+    {
+      glBegin(GL_TRIANGLES);
       drawCircle(circle.radius, circle.c_x, circle.c_y);
+      glEnd();
       break;
+    }
 
     case 3:
       treeDisplay::drawTree<char>(&head);
@@ -144,7 +153,7 @@ void renderAll()
       break;
     }
   }
-  glEnd();
+  // glEnd();
 }
 
 void startRenders()
