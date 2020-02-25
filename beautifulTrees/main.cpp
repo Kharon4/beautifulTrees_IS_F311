@@ -149,7 +149,6 @@ void renderAll()
 
     default:
       cout << "Error in renderAll() - no valid exercise found\n";
-      treeDisplay::drawTree<char>(&head);
       break;
     }
   }

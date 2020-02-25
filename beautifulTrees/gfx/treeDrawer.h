@@ -1,3 +1,8 @@
+/**
+ * @file treeDrwer.h
+ * @brief implements functions that can be used to draw a binary tree.
+ */
+
 #pragma once
 #include "binTree.cpp"
 #include "primitives.h"
@@ -18,6 +23,15 @@ public:
 	long int off = 0, lev = 0;
 };
 
+
+/**
+  * Calculates the relative position of nodes , before calculation the absolute value.
+  *
+  * @param t address of the root node of the sub tree
+  * @param level level of root node of the sub tree
+  * @param rMost right extreme descendant
+  * @param lMost left extreme descendant
+  */
 template <typename T>
 void setup(binTree<T> *t, int level, extreme<T> &rMost, extreme<T> &lMost)
 {
@@ -149,6 +163,13 @@ void setup(binTree<T> *t, int level, extreme<T> &rMost, extreme<T> &lMost)
 	}
 }
 
+
+/**
+  * Sums the relative position of nodes to calculation the absolute value.
+  *
+  * @param t address of the root node of the sub tree
+  * @param xPos x coordinate of the root node
+  */
 template <typename T>
 void petrify(binTree<T> *t, long int xPos = VIEWPORT_WIDTH / 2)
 {
@@ -166,11 +187,21 @@ void petrify(binTree<T> *t, long int xPos = VIEWPORT_WIDTH / 2)
 	}
 }
 
+/**
+  *Converts the integral coordinates obtained by petrify function to viewport coordinates
+  *
+  * @param in the parameter to be converted
+ */
 int convert(int in)
 {
 	return VIEWPORT_HEIGHT - 30 * in - 20;
 }
 
+/**
+  *Draws the nodes at their respective positions , and connects parent/chld nodes using lines
+  *
+  * @param t address of the root of the tree to be drawn 
+ */
 template <typename T>
 void drawTree(binTree<T> *t)
 {

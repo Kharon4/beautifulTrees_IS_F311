@@ -1,3 +1,8 @@
+/**
+ * @file binTree.h
+ * @brief declares the binary tree class 
+ */
+
 #pragma once
 #include <vector>
 
