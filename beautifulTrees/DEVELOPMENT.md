@@ -8,7 +8,7 @@
    sudo apt-get install libglfw3-dev
    ```
 1. `glfw` headers will become available at `/usr/include/GLFW/glfw3.h`
-1. Compile using `g++ beautifulTrees.cpp -lglfw -lGLU -lGL`
+1. Compile using `g++ main.cpp gfx/*.cpp -lglfw -lGLU -lGL -lm`
 1. Run as `./a.out`
 
 ### Screenshot ( as of 0d0603cf7)

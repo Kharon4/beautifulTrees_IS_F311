@@ -14,3 +14,7 @@ The official project announcement can be found [here](INSTR.md)
 
 Doxygen was used to generate this documentation. Use the command `doxygen Doxyfile` from this
 directory to generate the html files in `html` directory. Ensure `doxygen` is installed.
+
+## Analysis of our work
+
+Click on _Files_ above to see the analysis and demos.

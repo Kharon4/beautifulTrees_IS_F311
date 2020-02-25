@@ -104,17 +104,44 @@ void exerciseCircle()
 
 binTree<char> head('H');
 binTree<char> c1('a');
-binTree<char> c2('b');
-binTree<char> c[10];
+// binTree<char> c2('b');
+// binTree<char> c[10];
+// binTree<char> node('T');
+int inp[200][2];
+
+void insertChild(binTree<char> *t)
+{
+  int l, r;
+  binTree<char> *left = nullptr, *right = nullptr;
+
+  cout << "Has left child? ";
+  cin >> l;
+  cout << "Has right child? ";
+  cin >> r;
+  if (l)
+  {
+    left = new binTree<char>('T');
+  }
+  if (r)
+  {
+    right = new binTree<char>('T');
+  }
+
+  (*t).set(left, right);
+  if (l)
+  {
+    insertChild(left);
+  }
+  if (r)
+  {
+    insertChild(right);
+  }
+}
+
 void exerciseBinTree()
 {
   exerciseChoice = 3;
-  head.set(&c1, &c2);
-  c1.set(c, c + 1);
-  c[0].set(c + 2, c + 3);
-  c[1].set(c + 4, c + 5);
-  c[2].set(c + 6, c + 7);
-
+  insertChild(&head);
   treeDisplay::extreme<char> e1, e2;
   treeDisplay::setup<char>(&head, 0, e1, e2);
   treeDisplay::petrify<char>(&head);
@@ -144,8 +171,12 @@ void renderAll()
     }
 
     case 3:
+    {
+      // const clock_t begin_time = clock();
       treeDisplay::drawTree<char>(&head);
+      // std::cout << float(clock() - begin_time) / CLOCKS_PER_SEC << "\n";
       break;
+    }
 
     default:
       cout << "Error in renderAll() - no valid exercise found\n";
