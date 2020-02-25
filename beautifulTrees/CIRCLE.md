@@ -1,14 +1,18 @@
-# Drawing a Circle
+# Analysis - Drawing a Circle
 
-### Brief Documentation of the algorithm
+## Brief Documentation of the algorithm
 
-The miidpoint circle algorithm is used to determine the points needed for rasterizing a circle. It makes use of the fact that a circle has 8-way symmetry. Using certain imporivements and optimizations, we can implement this
+The midpoint circle algorithm is used to determine the points needed for rasterizing a circle. It makes use of the fact that a circle has 8-way symmetry. Using certain imporivements and optimizations, we can implement this
 algorithm using only integer calculations, instead of real calculations.
 Basically, the algorithm calculates a decision variable to decide which point to render next.
 
 Reference for detailed algorithm: https://en.wikipedia.org/wiki/Midpoint_circle_algorithm#cite_ref-HearnBaker1994_1-0
 
-### Example Output
+## Algorithm Used
+
+![cirlcle-algo](screenshots/circle-algo.png)
+
+## Example Output
 
 - 100 unit radius circle
 
@@ -18,7 +22,7 @@ Reference for detailed algorithm: https://en.wikipedia.org/wiki/Midpoint_circle_
 
 ![1](screenshots/circle-1.png)
 
-### Timing
+## Timing
 
 - Drawing a circle of radius ~10 takes less than 1ms. Drawing a circle of radius 10,000 units takes around 0.01 seconds ( per frame ).
 
@@ -32,7 +36,7 @@ Reference for detailed algorithm: https://en.wikipedia.org/wiki/Midpoint_circle_
 
 Times were calculated on an Intel i7-7700HQ Processor.
 
-### Problems faced
+## Problems faced
 
 We tried to fill the circle with a color. We tried using Open GL `GL_POLYGON` in `GLBegin()`
 and fill it with a color. However, the filled circle was not accurately filled by OpenGL.
