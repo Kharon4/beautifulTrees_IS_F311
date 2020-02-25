@@ -17,4 +17,4 @@ directory to generate the html files in `html` directory. Ensure `doxygen` is in
 
 ## Analysis of our work
 
-Click on _Files_ above to see the analysis and demos.
+Click on _Related Pages_ above to see the analysis and demos.

@@ -1,0 +1,8 @@
+digraph "gfx" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_3a924b96366437974edfa9bf6ddad245 [shape=box, label="gfx", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_3a924b96366437974edfa9bf6ddad245.html"];
+  dir_d44c64559bbebec7f509842c48db8b23 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_d44c64559bbebec7f509842c48db8b23.html"];
+  dir_3a924b96366437974edfa9bf6ddad245->dir_d44c64559bbebec7f509842c48db8b23 [headlabel="2", labeldistance=1.5 headhref="dir_000000_000001.html"];
+}
